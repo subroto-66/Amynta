@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { FileQuestion, LayoutGrid, User2Icon, Users2Icon } from 'lucide-vue-next';
+import { FileQuestion, House, LayoutGrid, User2Icon, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -30,8 +30,12 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Home',
-        icon: User2Icon,
+        icon: House,
         subMenu: [
+            {
+                title: 'Hero',
+                href: '/hero',
+            },
             {
                 title: 'Specialists',
                 href: '/specialists',
