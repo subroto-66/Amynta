@@ -74,7 +74,6 @@ const submit = () => {
                         <Label label="Page Name" />
                         <select v-model="form.page_name"
                             class="border border-gray-300 rounded px-3 py-2 w-full mt-1 text-sm">
-                            <option value="">Select Page Name</option>
                             <option value="home">Home</option>
                             <option value="about">About</option>
                             <option value="credit">Credit</option>
@@ -98,7 +97,7 @@ const submit = () => {
                         </div>
 
 
-                        <div v-if="form.page_name === 'home' || form.page_name === 'credit'">
+                        <div v-if=" form.page_name === 'credit'">
                             <InputLabel label="Title Two" v-model="form.title_two" type="text" />
                             <span class="text-red-500 text-sm" v-if="form.errors.title_two">
                                 {{ form.errors.title_two }}

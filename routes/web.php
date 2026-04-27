@@ -6,6 +6,7 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -56,6 +57,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/specialists/edit/{id}', [SpecialistController::class, 'edit'])->name('specialists.edit');
     Route::post('/specialists/update/{id}', [SpecialistController::class, 'update'])->name('specialists.update');
     Route::delete('/specialists/destroy/{id}', [SpecialistController::class, 'destroy'])->name('specialists.destroy');
+
+    // about 
+
+    Route::get('/works', [WorkController::class, 'index'])->name('work.index');
+    Route::get('/works/create', [WorkController::class, 'create'])->name('work.create');
+    Route::post('/works/store', [WorkController::class, 'store'])->name('work.store');
+    Route::get('/works/edit/{id}', [WorkController::class, 'edit'])->name('work.edit');
+    Route::post('/works/update/{id}', [WorkController::class, 'update'])->name('work.update');
+    Route::delete('/works/destroy/{id}', [WorkController::class, 'destroy'])->name('work.destroy');
+
+
 });
 
 require __DIR__.'/settings.php';

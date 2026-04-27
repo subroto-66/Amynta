@@ -99,7 +99,7 @@ const submit = () => {
                         </div>
 
 
-                        <div v-if="form.page_name === 'home' || form.page_name === 'credit'">
+                        <div v-if="form.page_name === 'credit'">
                             <InputLabel label="Title Two" v-model="form.title_two" type="text" />
                             <span class="text-red-500 text-sm" v-if="form.errors.title_two">
                                 {{ form.errors.title_two }}

@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { FileQuestion, House, ImageIcon, LayoutGrid, User2Icon, Users2Icon } from 'lucide-vue-next';
+import { FileQuestion, House, ImageIcon, LayoutGrid, Mail, User2Icon, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -42,6 +42,26 @@ const mainNavItems: NavItem[] = [
         ]
     },
     {
+        title: 'About',
+        icon: Users2Icon,
+        subMenu: [
+            {
+                title: 'Work',
+                href: '/works',
+            }
+        ]
+    },
+    {
+        title: 'Contact',
+        icon: Mail,
+        subMenu: [
+            {
+                title: 'Reach Us',
+                href: '#',
+            }
+        ]
+    },
+    {
         title: 'FAQS',
         href: '/faqs',
         icon: FileQuestion,
@@ -62,12 +82,12 @@ const mainNavItems: NavItem[] = [
             <SidebarMenu>
                 <SidebarMenuItem>
                     <Link href="/dashboard">
-                            <div class="flex gap-2">
+                            <div class="flex ">
                                 <!-- <div class="flex aspect-square size-9 items-center justify-center rounded-md mt-3">
                                 <img class="w-14" src="/assets/images/fabicon.png" alt="icon">
                             </div> -->
-                                <div class="grid flex-1 text-left text-sm mt-4">
-                                    <img class="w-28" src="/assets/images/sanmo.jpg" alt="">
+                                <div class="grid flex-1 items-center text-sm mt-4">
+                                    <img class="w-28" src="/assets/images/amynta.png" alt="amynta">
                                 </div>
                             </div>
                         </Link>
