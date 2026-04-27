@@ -1,0 +1,87 @@
+<script setup lang="ts">
+import { Head, useForm } from '@inertiajs/vue3';
+import Button from '@/components/custom/Button.vue';
+import InputLabel from '@/components/custom/InputLabel.vue';
+import Label from '@/components/custom/Label.vue';
+import LinkButton from '@/components/custom/LinkButton.vue';
+
+defineOptions({
+    layout: {
+        breadcrumbs: [
+            {
+                title: 'Specialty Risks List',
+                href: '/specialty-risk',
+            },
+        ],
+    },
+});
+
+const props = defineProps<{
+    specialtyRisk: any;
+}>()
+
+const form = useForm({
+    index: props.specialtyRisk.index,
+    title: props.specialtyRisk.title,
+    description: props.specialtyRisk.description,
+});
+
+
+
+const submit = () => {
+    form.put(`/specialty-risk/${props.specialtyRisk.id}`);
+};
+
+</script>
+
+<template>
+
+    <Head title="FAQs Update" />
+
+    <div class="bg-white m-7 p-5 rounded">
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b pb-3">
+            <h1 class="text-xl font-medium">Specialty Risk Update</h1>
+            <LinkButton label="Back" url="/specialty-risk" />
+        </div>
+
+        <div class="p-5">
+            <form @submit.prevent="submit" class="space-y-3">
+
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+                    <!-- Title -->
+                    <div>
+                        <InputLabel label="Index" v-model="form.index" type="number" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.index">
+                            {{ form.errors.index }}
+                           </span>
+                    </div>
+
+                    <div>
+                        <InputLabel label="Title" v-model="form.title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.title">
+                            {{ form.errors.title }}
+                        </span>
+                    </div>
+                    <div>
+                        <Label label="Description" />
+                        <textarea v-model="form.description" rows="4"
+                            class="w-full border border-gray-300 text-sm rounded-lg p-2.5"></textarea>
+
+                        <span class="text-red-500 text-sm" v-if="form.errors.description">
+                            {{ form.errors.description }}
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Submit -->
+                <div class="mt-5 border-t pt-4">
+                    <Button label="Update" type="submit" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</template>
+

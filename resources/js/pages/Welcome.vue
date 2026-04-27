@@ -45,7 +45,7 @@ withDefaults(
             <!-- Main Content -->
             <main class="flex grow items-center justify-center">
                 <h1 class="text-4xl font-bold text-white lg:text-6xl mt-10">
-                    Welcome To Sanmo Bangladesh
+                    Welcome To Amynta Risk Solutions
                 </h1>
             </main>
 

@@ -7,6 +7,7 @@ import 'dropify';
 import Button from '@/components/custom/Button.vue';
 import InputLabel from '@/components/custom/InputLabel.vue';
 import Label from '@/components/custom/Label.vue';
+import LinkButton from '@/components/custom/LinkButton.vue';
 
 defineOptions({
     layout: {
@@ -63,7 +64,7 @@ onMounted(() => {
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
             <h1 class="text-xl font-medium">specialists Create</h1>
-            <LinkButton label="Back" url="/about-cms" />
+            <LinkButton label="Back" url="/specialists" />
         </div>
 
         <div class="p-5">

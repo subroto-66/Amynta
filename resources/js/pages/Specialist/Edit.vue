@@ -70,7 +70,7 @@ onMounted(() => {
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
             <h1 class="text-xl font-medium">Specialist Update</h1>
-            <LinkButton label="Back" url="/specialist" />
+            <LinkButton label="Back" url="/specialists" />
         </div>
 
         <div class="p-5">
