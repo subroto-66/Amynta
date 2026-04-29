@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('commitments', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('sub_title')->nullable();
+            $table->string('title_two')->nullable();
+            $table->text('description')->nullable();
+            $table->string('title_three')->nullable();
+            $table->string('primary_button_text')->nullable();
+            $table->string('primary_button_link')->nullable();
+            $table->string('secondary_button_text')->nullable();
+            $table->string('secondary_button_link')->nullable();
             $table->timestamps();
         });
     }

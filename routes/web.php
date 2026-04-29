@@ -7,6 +7,9 @@ use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\CommitmentController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ReachOutController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -67,7 +70,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/works/update/{id}', [WorkController::class, 'update'])->name('work.update');
     Route::delete('/works/destroy/{id}', [WorkController::class, 'destroy'])->name('work.destroy');
 
+    // Commitment
+    Route::get('/commitment', [CommitmentController::class, 'index'])->name('commitment.index');
+    Route::post('/commitment/update', [CommitmentController::class, 'update'])->name('commitment.update');
 
+    // contact
+    Route::get('/contact', [ContactUsController::class, 'index'])->name('contact.index');
+    Route::get('/contact/edit/{id}', [ContactUsController::class, 'edit'])->name('contact.edit');
+    Route::post('/contact/update/{id}', [ContactUsController::class, 'update'])->name('contact.update');
+    Route::delete('/contact/destroy/{id}', [ContactUsController::class, 'destroy'])->name('contact.destroy');
+
+    Route::get('/reach-out', [ReachOutController::class, 'index'])->name('reachOut.index');
+    Route::get('/reach-out/create', [ReachOutController::class, 'create'])->name('reachOut.create');
+    Route::post('/reach-out/store', [ReachOutController::class, 'store'])->name('reachOut.store');
+    Route::get('/reach-out/edit/{id}', [ReachOutController::class, 'edit'])->name('reachOut.edit');
+    Route::post('/reach-out/update/{id}', [ReachOutController::class, 'update'])->name('reachOut.update');
+    Route::delete('/reach-out/destroy/{id}', [ReachOutController::class, 'destroy'])->name('reachOut.destroy');
 });
 
 require __DIR__.'/settings.php';

@@ -48,6 +48,10 @@ const mainNavItems: NavItem[] = [
             {
                 title: 'Work',
                 href: '/works',
+            },
+            {
+                title: 'Commitment',
+                href: '/commitment',
             }
         ]
     },
@@ -56,8 +60,12 @@ const mainNavItems: NavItem[] = [
         icon: Mail,
         subMenu: [
             {
+                title: 'Contact',
+                href: '/contact',
+            },
+            {
                 title: 'Reach Us',
-                href: '#',
+                href: '/reach-out',
             }
         ]
     },
