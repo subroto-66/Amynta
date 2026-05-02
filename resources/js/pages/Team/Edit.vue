@@ -124,7 +124,7 @@ onMounted(() => {
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
+
                     <div>
                         <InputLabel label="Mail" v-model="form.mail" type="text" />
                         <span class="text-red-500 text-sm" v-if="form.errors.mail">

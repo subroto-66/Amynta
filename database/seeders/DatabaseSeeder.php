@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
             // UserSeeder::class,
             // HeroWWSeeder::class,
             // CommitmentSeeder::class,
+            // SettingSeeder::class,
+            // UnderwriteSeeder::class,
+            // BackedStrengthAmyntaSeeder::class,
+            // GetInTouchSeeder::class,
         ]);
     }
 }

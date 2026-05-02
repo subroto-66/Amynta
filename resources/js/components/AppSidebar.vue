@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { FileQuestion, House, ImageIcon, LayoutGrid, Mail, User2Icon, Users2Icon } from 'lucide-vue-next';
+import { FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -28,17 +28,33 @@ const mainNavItems: NavItem[] = [
         icon: House,
         subMenu: [
             {
+                title: 'Specialty Risks',
+                href: '/specialty-risk',
+            },
+            {
                 title: 'Divisions',
                 href: '/our-divisions',
+            },
+            {
+                title: 'Underwrite',
+                href: '/how-we-underwrite',
+            },
+            {
+                title: 'Backed Strength',
+                href: '/backed-strength',
             },
             {
                 title: 'Specialists',
                 href: '/specialists',
             },
             {
-                title: 'Specialty Risks',
-                href: '/specialty-risk',
+                title: 'Structure',
+                href: '/our-structure',
             },
+            {
+                title: 'Get In Touch',
+                href: '/get-in-touch',
+            }
         ]
     },
     {
@@ -78,7 +94,12 @@ const mainNavItems: NavItem[] = [
         title: 'Teams',
         href: '/teams',
         icon: Users2Icon,
-    }
+    },
+    {
+        title: 'Settings',
+        href: '/others-settings',
+        icon: Settings,
+    },
 
 ];
 

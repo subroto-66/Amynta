@@ -1,15 +1,20 @@
 <?php
 
+use App\Http\Controllers\CommitmentController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\ReachOutController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\WorkController;
-use App\Http\Controllers\CommitmentController;
-use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\ReachOutController;
+use App\Http\Controllers\BackedStrengthAmyntaController;
+use App\Http\Controllers\StructureController;
+use App\Http\Controllers\GetInTouchController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -61,7 +66,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/specialists/update/{id}', [SpecialistController::class, 'update'])->name('specialists.update');
     Route::delete('/specialists/destroy/{id}', [SpecialistController::class, 'destroy'])->name('specialists.destroy');
 
-    // about 
+    // about
 
     Route::get('/works', [WorkController::class, 'index'])->name('work.index');
     Route::get('/works/create', [WorkController::class, 'create'])->name('work.create');
@@ -86,6 +91,31 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/reach-out/edit/{id}', [ReachOutController::class, 'edit'])->name('reachOut.edit');
     Route::post('/reach-out/update/{id}', [ReachOutController::class, 'update'])->name('reachOut.update');
     Route::delete('/reach-out/destroy/{id}', [ReachOutController::class, 'destroy'])->name('reachOut.destroy');
+
+    // Setting
+    Route::get('/others-settings', [SettingController::class, 'edit'])->name('othersSettings.index');
+    Route::post('/others-settings/update', [SettingController::class, 'update'])->name('othersSettings.update');
+
+    // Underwrite
+    Route::get('/how-we-underwrite', [UnderwriteController::class, 'index'])->name('underwrite.index');
+    Route::post('/how-we-underwrite/update', [UnderwriteController::class, 'update'])->name('underwrite.update');
+
+    //backed-strength
+    Route::get('/backed-strength', [BackedStrengthAmyntaController::class, 'index'])->name('backedStrength.index');
+    Route::post('/backed-strength/update', [BackedStrengthAmyntaController::class, 'update'])->name('backedStrength.update');
+
+    // structure
+    Route::get('/our-structure', [StructureController::class, 'index'])->name('structure.index');
+    Route::get('/our-structure/create', [StructureController::class, 'create'])->name('structure.create');
+    Route::post('/our-structure/store', [StructureController::class, 'store'])->name('structure.store');
+    Route::get('/our-structure/edit/{id}', [StructureController::class, 'edit'])->name('structure.edit');
+    Route::post('/our-structure/update/{id}', [StructureController::class, 'update'])->name('structure.update');
+    Route::delete('/our-structure/destroy/{id}', [StructureController::class, 'destroy'])->name('structure.destroy');
+
+    // Get In Touch
+    Route::get('/get-in-touch', [GetInTouchController::class, 'index'])->name('getInTouch.index');
+    Route::post('/get-in-touch/update', [GetInTouchController::class, 'update'])->name('getInTouch.update');
+
 });
 
 require __DIR__.'/settings.php';
