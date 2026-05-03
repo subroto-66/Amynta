@@ -66,7 +66,7 @@ onMounted(() => {
 
     <Head title="Reach Out Update" />
 
-    <div class="bg-white m-7 p-5 rounded">
+    <div class="bg-white text-gray-500 m-7 p-5 rounded">
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
             <h1 class="text-xl font-medium">Reach Out Update</h1>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->string('message')->nullable();
+            $table->text('message')->nullable();
             $table->enum('status', ['pending', 'read', 'replied'])->default('pending');
             $table->timestamps();
         });

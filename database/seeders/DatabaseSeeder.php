@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             // UnderwriteSeeder::class,
             // BackedStrengthAmyntaSeeder::class,
             // GetInTouchSeeder::class,
+            // BackedByAmyntaGroupSeeder::class,
         ]);
     }
 }

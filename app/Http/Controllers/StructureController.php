@@ -26,7 +26,7 @@ class StructureController
         $request->validate([
             'count_number' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $structure = new Structure();
@@ -57,7 +57,7 @@ class StructureController
         $request->validate([
             'count_number' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $structure = Structure::find($id);

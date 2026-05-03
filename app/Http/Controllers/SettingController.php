@@ -19,12 +19,12 @@ class SettingController
     {
         $request->validate([
 
-            'header_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'fab_icon' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'header_logo' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'fab_icon' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required|string|max:255',
             'meta_title' => 'required|string|max:255',
             'meta_description' => 'required|string|max:255',
-            'footer_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'footer_logo' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'footer_description' => 'required|string|max:255',
             'linkedin_url' => 'nullable|string|max:255',
             'instagram_url' => 'nullable|string|max:255',

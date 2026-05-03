@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('position')->nullable();
             $table->string('image')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('mail')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('twitter_link')->nullable();

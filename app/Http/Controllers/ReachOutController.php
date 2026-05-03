@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ReachOut;
-use Inertia\Inertia;
+use Illuminate\Http\Request;
 
 class ReachOutController
 {
-    
     public function index()
     {
         $reachOut = ReachOut::orderBy('id', 'desc')->get();
+
         return inertia('ReachOut/Index', [
             'reachOut' => $reachOut,
         ]);
     }
-    
+
     public function create(Request $request)
     {
         return inertia('ReachOut/Create');
@@ -32,7 +31,7 @@ class ReachOutController
             'address_two' => 'nullable',
         ]);
 
-        $reachOut = new ReachOut();
+        $reachOut = new ReachOut;
 
         if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->extension();
@@ -48,11 +47,10 @@ class ReachOutController
         return redirect()->route('reachOut.index')->with('success', 'Reach Out updated successfully.');
     }
 
-
-
     public function edit($id)
     {
         $reachOut = ReachOut::find($id);
+
         return inertia('ReachOut/Edit', [
             'reachOut' => $reachOut,
         ]);
@@ -82,14 +80,14 @@ class ReachOutController
                 $request->image->move(public_path('reachOut'), $imageName);
                 $reachOut->image = $imageName;
 
-            }else{
+            } else {
 
                 $imageName = time().'.'.$request->image->extension();
                 $request->image->move(public_path('reachOut'), $imageName);
                 $reachOut->image = $imageName;
 
             }
-        }   
+        }
 
         $reachOut->title = $request->title;
         $reachOut->address_one = $request->address_one;
@@ -112,6 +110,4 @@ class ReachOutController
 
         return redirect()->route('reachOut.index')->with('success', 'Reach Out deleted successfully.');
     }
-
-
 }

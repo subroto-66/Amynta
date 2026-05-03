@@ -24,7 +24,7 @@ class TeamController
         $request->validate([
             'name' => 'required',
             'position' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'description' => 'required',
             'mail' => 'nullable',
             'instagram_link' => 'nullable',
@@ -68,7 +68,7 @@ class TeamController
         $request->validate([
             'name' => 'required',
             'position' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'status' => 'required',
             'mail' => 'nullable',
             'description' => 'nullable',

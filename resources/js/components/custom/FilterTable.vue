@@ -55,7 +55,7 @@ watch([search, entriesPerPage], () => {
 </script>
 
 <template>
-    <div class="bg-white p-5 rounded">
+    <div class="bg-white text-gray-500 p-5 rounded">
         <div class="flex items-center justify-between mb-3 border-b border-gray-200 border-dashed pb-3">
             <h2 class="text-xl font-semibold">{{ title }}</h2>
             <Link v-if="createBtn" :href="createUrl || '#'" class="bg-[#3283f7] hover:bg-[#662B8E] duration-300 px-6 py-2 text-[15px] text-white rounded-md">{{ createText }}</Link>

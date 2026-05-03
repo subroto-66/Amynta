@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Underwrite;
 use Illuminate\Http\Request;
+use App\Models\Item;
 use Inertia\Inertia;
 
 class UnderwriteController
@@ -11,8 +12,12 @@ class UnderwriteController
     public function index()
     {
         $underwrite = Underwrite::first();
+        $items = Item::where('section_name', 'underwrite')->get();
 
-        return Inertia::render('UnderWrite/Edit', ['underwrite' => $underwrite]);
+        return Inertia::render('UnderWrite/Edit', [
+            'underwrite' => $underwrite,
+            'items' => $items
+        ]);
     }
 
     public function update(Request $request)
@@ -25,8 +30,11 @@ class UnderwriteController
             'qoute' => 'required|string|max:255',
             'author_name' => 'required|string|max:255',
             'author_position' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'author_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'author_image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'items' => 'required|array',
+            'items.*.title' => 'required|string|max:255',
+            'items.*.image' => 'required',
         ]);
 
         $underwrite = Underwrite::first();
@@ -60,6 +68,19 @@ class UnderwriteController
         }
 
         $underwrite->save();
+
+        Item::where('section_name', 'underwrite')->delete();
+
+        foreach ($request->items as $item) {
+
+            Item::create([
+                'section_name' => 'underwrite',
+                'title' => $item['title'],
+                'image' => $item['image'],
+            ]);
+        }
+
+
 
         return redirect()->route('underwrite.index')->with('success', 'Underwrite updated successfully.');
     }

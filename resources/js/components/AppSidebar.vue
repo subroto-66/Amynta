@@ -66,6 +66,10 @@ const mainNavItems: NavItem[] = [
                 href: '/works',
             },
             {
+                title: 'Backed by Amynta',
+                href: '/backed-amynta-group',
+            },
+            {
                 title: 'Commitment',
                 href: '/commitment',
             }

@@ -23,6 +23,7 @@ defineOptions({
 
 const props = defineProps<{
     underwrite: any;
+    items: any[];
 }>()
 
 const form = useForm({
@@ -36,7 +37,29 @@ const form = useForm({
     author_name: props.underwrite.author_name,
     author_position: props.underwrite.author_position,
 
+    items: props.items && props.items.length
+        ? props.items
+        : [{ title: '', image: '' }],
+
 });
+
+const addItem = () => {
+    form.items.push({
+        title: '',
+        image: '',
+    });
+};
+
+const removeItem = (index: number) => {
+
+    if (form.items.length <= 1) {
+        console.log('At least one item is required');
+
+        return;
+    }
+
+    form.items.splice(index, 1);
+};
 
 
 const image = (e: Event) => {
@@ -102,7 +125,7 @@ onMounted(() => {
 
     <Head title="Underwrite Update" />
 
-    <div class="bg-white m-7 p-5 rounded">
+    <div class="bg-white text-gray-500 m-7 p-5 rounded">
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
             <h1 class="text-xl font-medium">Underwrite Update</h1>
@@ -171,6 +194,50 @@ onMounted(() => {
                         <span class="text-red-500 text-sm" v-if="form.errors.author_position">
                             {{ form.errors.author_position }}
                         </span>
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+                    <h2 class="text-lg font-semibold mb-2">Items</h2>
+
+                    <div
+                        v-for="(item, index) in form.items"
+                        :key="index"
+                        class="border p-3 rounded mb-3"
+                    >
+                        <!-- Item Title -->
+                        <InputLabel
+                            label="Title"
+                            v-model="item.title"
+                            type="text"
+                        />
+                        <!-- Item Image -->
+                        <InputLabel
+                            label="Svg Icon"
+                            v-model="item.image"
+                            type="text"
+                        />
+
+                        <!-- Remove Button -->
+                        <button
+                            type="button"
+                            class="mt-2 text-red-500 text-sm cursor-pointer"
+                            @click="removeItem(index)"
+                        >
+                            Remove Item
+                        </button>
+                    </div>
+
+                    <!-- Add Button -->
+                    <div class="flex justify-end">
+                        <button
+                            type="button"
+                            class="bg-blue-500 text-white px-3 py-1 rounded cursor-pointer"
+                            @click="addItem"
+                        >
+                            + Add Item
+                        </button>
                     </div>
 
                 </div>

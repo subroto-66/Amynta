@@ -1,20 +1,21 @@
 <?php
 
+use App\Http\Controllers\BackedByAmyntaGroupController;
+use App\Http\Controllers\BackedStrengthAmyntaController;
 use App\Http\Controllers\CommitmentController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\GetInTouchController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ReachOutController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
+use App\Http\Controllers\StructureController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\WorkController;
-use App\Http\Controllers\BackedStrengthAmyntaController;
-use App\Http\Controllers\StructureController;
-use App\Http\Controllers\GetInTouchController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -67,13 +68,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/specialists/destroy/{id}', [SpecialistController::class, 'destroy'])->name('specialists.destroy');
 
     // about
-
     Route::get('/works', [WorkController::class, 'index'])->name('work.index');
     Route::get('/works/create', [WorkController::class, 'create'])->name('work.create');
     Route::post('/works/store', [WorkController::class, 'store'])->name('work.store');
     Route::get('/works/edit/{id}', [WorkController::class, 'edit'])->name('work.edit');
     Route::post('/works/update/{id}', [WorkController::class, 'update'])->name('work.update');
     Route::delete('/works/destroy/{id}', [WorkController::class, 'destroy'])->name('work.destroy');
+
+    // backed Amynta Group
+    Route::get('/backed-amynta-group', [BackedByAmyntaGroupController::class, 'index'])->name('backedAmyntaGroup.index');
+    Route::post('/backed-amynta-group/update', [BackedByAmyntaGroupController::class, 'update'])->name('backedAmyntaGroup.update');
 
     // Commitment
     Route::get('/commitment', [CommitmentController::class, 'index'])->name('commitment.index');
@@ -100,7 +104,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/how-we-underwrite', [UnderwriteController::class, 'index'])->name('underwrite.index');
     Route::post('/how-we-underwrite/update', [UnderwriteController::class, 'update'])->name('underwrite.update');
 
-    //backed-strength
+    // backed-strength
     Route::get('/backed-strength', [BackedStrengthAmyntaController::class, 'index'])->name('backedStrength.index');
     Route::post('/backed-strength/update', [BackedStrengthAmyntaController::class, 'update'])->name('backedStrength.update');
 

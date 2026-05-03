@@ -169,7 +169,7 @@ onMounted(() => {
 
     <Head title="Employees" />
 
-    <div class="bg-white m-7 p-5 rounded">
+    <div class="bg-white text-gray-500 m-7 p-5 rounded">
 
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
