@@ -25,7 +25,7 @@ class ReachOutController
     {
 
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp,gif|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg,svg,webp,gif|max:2048',
             'title' => 'required',
             'address_one' => 'nullable',
             'address_two' => 'nullable',
@@ -59,7 +59,7 @@ class ReachOutController
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp,gif|max:2048',
+            'image' => 'nullable|mimes:jpeg,png,jpg,svg,webp,gif|max:2048',
             'title' => 'required',
             'address_one' => 'nullable',
             'address_two' => 'nullable',

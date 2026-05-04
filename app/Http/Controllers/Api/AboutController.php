@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Hero;
-use App\Models\Work;
 use App\Models\BackedByAmyntaGroup;
-use App\Models\Item;
 use App\Models\Commitment;
+use App\Models\Hero;
+use App\Models\Item;
+use App\Models\Work;
 
 class AboutController
 {
@@ -16,7 +16,7 @@ class AboutController
         $works = Work::orderBy('id', 'asc')->get();
 
         $backedByAmyntaGroup = BackedByAmyntaGroup::first();
-        $items = Item::where('section_name', 'backed_by_amynta_group')->get();
+        $backedByAmyntaItems = Item::where('section_name', 'backed_by_amynta_group')->get();
 
         $commitment = Commitment::first();
 
@@ -25,7 +25,7 @@ class AboutController
             'hero' => $hero,
             'works' => $works,
             'backed_by_amynta_group' => $backedByAmyntaGroup,
-            'items' => $items,
+            'items' => $backedByAmyntaItems,
             'commitment' => $commitment,
 
         ]);
