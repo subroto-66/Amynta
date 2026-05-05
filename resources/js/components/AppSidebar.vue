@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, Users2Icon } from 'lucide-vue-next';
+import { CreditCard, FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, StepForwardIcon, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -54,6 +54,42 @@ const mainNavItems: NavItem[] = [
             {
                 title: 'Get In Touch',
                 href: '/get-in-touch',
+            }
+        ]
+    },
+    {
+        title: 'Credits',
+        icon: CreditCard,
+        subMenu: [
+            {
+                title: 'Corporate Credit',
+                href: '/corporate-credit',
+            },
+            {
+                title: 'Portfolio Credit',
+                href: '/portfolio-credit',
+            },
+            {
+                title: 'Structured Solution',
+                href: '/structured-solution',
+            },
+            {
+                title: 'Mortgage Credit',
+                href: '/mortgage-credit',
+            },
+            {
+                title: 'Team Overview',
+                href: '/team-overview',
+            }
+        ]
+    },
+    {
+        title: 'Contingency',
+        icon: StepForwardIcon,
+        subMenu: [
+            {
+                title: 'Core Coverage',
+                href: '/core-coverage',
             }
         ]
     },

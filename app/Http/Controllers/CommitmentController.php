@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Commitment;
+use Illuminate\Http\Request;
 
 class CommitmentController
 {
     public function index()
     {
         $commitment = Commitment::first();
+
         return inertia('Commitment/Edit', [
             'commitment' => $commitment,
         ]);
@@ -44,5 +45,4 @@ class CommitmentController
 
         return redirect()->route('commitment.index')->with('success', 'Commitment updated successfully.');
     }
-
 }

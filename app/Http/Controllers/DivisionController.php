@@ -27,7 +27,7 @@ class DivisionController
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:svg|max:2048',
             'button_text' => 'nullable',
             'button_link' => 'nullable',
         ]);
@@ -63,14 +63,14 @@ class DivisionController
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:svg|max:2048',
             'button_text' => 'nullable',
             'button_link' => 'nullable',
         ]);
 
         $division = Division::find($id);
 
-        
+
         if($request->hasFile('image')){
 
             if(file_exists(public_path('divisions/' . $division->image))){
@@ -97,7 +97,7 @@ class DivisionController
         $division = Division::find($id);
         if(file_exists(public_path('divisions/' . $division->image))){
             unlink(public_path('divisions/' . $division->image));
-        }   
+        }
         $division->delete();
 
         return redirect()->route('divisions.index');

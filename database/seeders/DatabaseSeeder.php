@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
             // BackedStrengthAmyntaSeeder::class,
             // GetInTouchSeeder::class,
             // BackedByAmyntaGroupSeeder::class,
+            // CorporateCreditSeeder::class,
+            // TeamOverviewSeeder::class,
+            // MortgageCreditSeeder::class,
+            // PortfolioCreditSeeder::class,
         ]);
     }
 }

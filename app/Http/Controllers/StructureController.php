@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Structure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class StructureController
@@ -12,6 +11,7 @@ class StructureController
     public function index()
     {
         $structures = Structure::orderBy('id', 'desc')->get();
+
         return Inertia::render('Structure/Index', ['structures' => $structures]);
     }
 
@@ -26,10 +26,10 @@ class StructureController
         $request->validate([
             'count_number' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|mimes:svg|max:2048',
         ]);
 
-        $structure = new Structure();
+        $structure = new Structure;
         $structure->count_number = $request->count_number;
         $structure->title = $request->title;
 
@@ -48,6 +48,7 @@ class StructureController
     public function edit($id)
     {
         $structure = Structure::find($id);
+
         return Inertia::render('Structure/Edit', ['structure' => $structure]);
     }
 
@@ -57,7 +58,7 @@ class StructureController
         $request->validate([
             'count_number' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|mimes:svg|max:2048',
         ]);
 
         $structure = Structure::find($id);
@@ -89,6 +90,7 @@ class StructureController
         }
 
         $structure->delete();
+
         return redirect()->route('structure.index')->with('success', 'Structure deleted successfully.');
     }
 }

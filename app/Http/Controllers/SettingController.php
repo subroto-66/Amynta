@@ -47,9 +47,9 @@ class SettingController
 
         if (request()->hasFile('header_logo')) {
 
-            // if($setting->header_logo){
-            //     unlink(public_path('OthersSettings/'.$setting->header_logo));
-            // }
+            if($setting->header_logo){
+                unlink(public_path('OthersSettings/'.$setting->header_logo));
+            }
 
             $image = request()->file('header_logo');
             $imageName = time().'_'.$image->getClientOriginalName();
@@ -59,9 +59,9 @@ class SettingController
 
         if (request()->hasFile('fab_icon')) {
 
-            // if($setting->fab_icon){
-            //     unlink(public_path('OthersSettings/'.$setting->fab_icon));
-            // }
+            if($setting->fab_icon){
+                unlink(public_path('OthersSettings/'.$setting->fab_icon));
+            }
 
             $image = request()->file('fab_icon');
             $imageName = time().'_'.$image->getClientOriginalName();
@@ -71,9 +71,9 @@ class SettingController
         
         if (request()->hasFile('footer_logo')) {
 
-            // if($setting->footer_logo){
-            //     unlink(public_path('OthersSettings/'.$setting->footer_logo));
-            // }
+            if($setting->footer_logo){
+                unlink(public_path('OthersSettings/'.$setting->footer_logo));
+            }
 
             $image = request()->file('footer_logo');
             $imageName = time().'_'.$image->getClientOriginalName();

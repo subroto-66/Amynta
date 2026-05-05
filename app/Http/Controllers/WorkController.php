@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Work;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class WorkController
@@ -11,6 +11,7 @@ class WorkController
     public function index()
     {
         $works = Work::all();
+
         return Inertia::render('Work/Index', [
             'work' => $works,
         ]);
@@ -25,7 +26,7 @@ class WorkController
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,svg,gif,webp|max:2048',
+            'image' => 'required|mimes:svg|max:2048',
         ]);
 
         $work = new Work;
@@ -45,6 +46,7 @@ class WorkController
     public function edit($id)
     {
         $work = Work::find($id);
+
         return Inertia::render('Work/Edit', [
             'work' => $work,
         ]);
@@ -54,7 +56,7 @@ class WorkController
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,gif,webp|max:2048',
+            'image' => 'nullable|mimes:svg|max:2048',
         ]);
 
         $work = Work::find($id);

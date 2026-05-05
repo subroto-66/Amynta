@@ -4,6 +4,7 @@ use App\Http\Controllers\BackedByAmyntaGroupController;
 use App\Http\Controllers\BackedStrengthAmyntaController;
 use App\Http\Controllers\CommitmentController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\CorporateCreditController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GetInTouchController;
@@ -15,6 +16,11 @@ use App\Http\Controllers\SpecialtyRiskController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UnderwriteController;
+use App\Http\Controllers\TeamOverviewController;
+use App\Http\Controllers\MortgageCreditController;
+use App\Http\Controllers\StructuredSolutionController;
+use App\Http\Controllers\PortfolioCreditController;
+use App\Http\Controllers\CoreCoverageController;
 use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -119,6 +125,38 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Get In Touch
     Route::get('/get-in-touch', [GetInTouchController::class, 'index'])->name('getInTouch.index');
     Route::post('/get-in-touch/update', [GetInTouchController::class, 'update'])->name('getInTouch.update');
+
+    // Corporate Credit
+    Route::get('/corporate-credit', [CorporateCreditController::class, 'index'])->name('corporateCredit.index');
+    Route::post('/corporate-credit/update', [CorporateCreditController::class, 'update'])->name('corporateCredit.update');
+
+    // Portfolio Credit
+    Route::get('/portfolio-credit', [PortfolioCreditController::class, 'index'])->name('portfolioCredit.index');
+    Route::post('/portfolio-credit/update', [PortfolioCreditController::class, 'update'])->name('portfolioCredit.update');
+
+    // Structured Solution
+    Route::get('/structured-solution', [StructuredSolutionController::class, 'index'])->name('structuredSolution.index');
+    Route::get('/structured-solution/create', [StructuredSolutionController::class, 'create'])->name('structuredSolution.create');
+    Route::post('/structured-solution/store', [StructuredSolutionController::class, 'store'])->name('structuredSolution.store');
+    Route::get('/structured-solution/edit/{id}', [StructuredSolutionController::class, 'edit'])->name('structuredSolution.edit');
+    Route::post('/structured-solution/update/{id}', [StructuredSolutionController::class, 'update'])->name('structuredSolution.update');
+    Route::delete('/structured-solution/destroy/{id}', [StructuredSolutionController::class, 'destroy'])->name('structuredSolution.destroy');
+
+    // Team Overview
+    Route::get('/team-overview', [TeamOverviewController::class, 'index'])->name('teamOverview.index');
+    Route::post('/team-overview/update', [TeamOverviewController::class, 'update'])->name('teamOverview.update');
+
+    // Mortgage Credit
+    Route::get('/mortgage-credit', [MortgageCreditController::class, 'index'])->name('mortgageCredit.index');
+    Route::post('/mortgage-credit/update', [MortgageCreditController::class, 'update'])->name('mortgageCredit.update');
+
+    // Core Coverage
+    Route::get('/core-coverage', [CoreCoverageController::class, 'index'])->name('coreCoverage.index');
+    Route::get('/core-coverage/create', [CoreCoverageController::class, 'create'])->name('coreCoverage.create');
+    Route::post('/core-coverage/store', [CoreCoverageController::class, 'store'])->name('coreCoverage.store');
+    Route::get('/core-coverage/edit/{id}', [CoreCoverageController::class, 'edit'])->name('coreCoverage.edit');
+    Route::post('/core-coverage/update/{id}', [CoreCoverageController::class, 'update'])->name('coreCoverage.update');
+    Route::delete('/core-coverage/destroy/{id}', [CoreCoverageController::class, 'destroy'])->name('coreCoverage.destroy');
 
 });
 
