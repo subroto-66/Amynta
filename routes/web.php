@@ -21,6 +21,8 @@ use App\Http\Controllers\MortgageCreditController;
 use App\Http\Controllers\StructuredSolutionController;
 use App\Http\Controllers\PortfolioCreditController;
 use App\Http\Controllers\CoreCoverageController;
+use App\Http\Controllers\UnderwritingApproachController;
+use App\Http\Controllers\ContingencyLeadershipController;
 use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -157,6 +159,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/core-coverage/edit/{id}', [CoreCoverageController::class, 'edit'])->name('coreCoverage.edit');
     Route::post('/core-coverage/update/{id}', [CoreCoverageController::class, 'update'])->name('coreCoverage.update');
     Route::delete('/core-coverage/destroy/{id}', [CoreCoverageController::class, 'destroy'])->name('coreCoverage.destroy');
+
+    // Underwriting Approach
+    Route::get('/underwriting-approach', [UnderwritingApproachController::class, 'index'])->name('underwritingApproach.index');
+    Route::get('/underwriting-approach/create', [UnderwritingApproachController::class, 'create'])->name('underwritingApproach.create');
+    Route::post('/underwriting-approach/store', [UnderwritingApproachController::class, 'store'])->name('underwritingApproach.store');
+    Route::get('/underwriting-approach/edit/{id}', [UnderwritingApproachController::class, 'edit'])->name('underwritingApproach.edit');
+    Route::post('/underwriting-approach/update/{id}', [UnderwritingApproachController::class, 'update'])->name('underwritingApproach.update');
+    Route::delete('/underwriting-approach/destroy/{id}', [UnderwritingApproachController::class, 'destroy'])->name('underwritingApproach.destroy');
+
+    // Contingency Leadership
+    Route::get('/contingency-leadership', [ContingencyLeadershipController::class, 'index'])->name('contingencyLeadership.index');
+    Route::post('/contingency-leadership/update', [ContingencyLeadershipController::class, 'update'])->name('contingencyLeadership.update');
 
 });
 

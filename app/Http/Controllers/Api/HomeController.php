@@ -12,6 +12,7 @@ use App\Models\BackedStrengthAmynta;
 use App\Models\Specialist;
 use App\Models\Structure;
 use App\Models\GetInTouch;
+use App\Models\OtherSetting;
 
 class HomeController
 {
@@ -46,4 +47,15 @@ class HomeController
             
         ], 200);
     }
+
+    public function footer(Request $request)
+    {
+        $footer = OtherSetting::first();
+
+        return response()->json([
+            'status' => 'success',
+            'footer' => $footer,
+        ], 200);
+    }
+
 }

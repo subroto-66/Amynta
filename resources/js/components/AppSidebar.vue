@@ -90,6 +90,14 @@ const mainNavItems: NavItem[] = [
             {
                 title: 'Core Coverage',
                 href: '/core-coverage',
+            },
+            {
+                title: 'Underwriting Approach',
+                href: '/underwriting-approach',
+            },
+            {
+                title: 'Contingency Leadership',
+                href: '/contingency-leadership',
             }
         ]
     },

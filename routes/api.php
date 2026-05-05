@@ -13,9 +13,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/footer', [HomeController::class, 'footer']);
 
 // Divisions
 Route::get('/credit', [DivisionController::class, 'credit']);
+Route::get('/contingency', [DivisionController::class, 'contingency']);
 
 //About
 Route::get('/about', [AboutController::class, 'about']);

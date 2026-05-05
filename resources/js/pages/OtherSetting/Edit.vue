@@ -83,7 +83,7 @@ const fab_icon = (e: Event) => {
 onMounted(() => {
 
     $('#header_logo').dropify({
-        defaultFile: `/OthersSettings/${props.setting.header_logo}`,
+        defaultFile: `/OthersSettings/header/${props.setting.header_logo}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',
@@ -94,7 +94,7 @@ onMounted(() => {
     });
 
     $('#footer_logo').dropify({
-        defaultFile: `/OthersSettings/${props.setting.footer_logo}`,
+        defaultFile: `/OthersSettings/footer/${props.setting.footer_logo}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',
@@ -105,7 +105,7 @@ onMounted(() => {
     });
 
     $('#fab_icon').dropify({
-        defaultFile: `/OthersSettings/${props.setting.fab_icon}`,
+        defaultFile: `/OthersSettings/fab_icon/${props.setting.fab_icon}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',

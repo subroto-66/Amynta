@@ -48,36 +48,36 @@ class SettingController
         if (request()->hasFile('header_logo')) {
 
             if($setting->header_logo){
-                unlink(public_path('OthersSettings/'.$setting->header_logo));
+                unlink(public_path('OthersSettings/header/'.$setting->header_logo));
             }
 
             $image = request()->file('header_logo');
             $imageName = time().'_'.$image->getClientOriginalName();
-            $image->move(public_path('OthersSettings'), $imageName);
+            $image->move(public_path('OthersSettings/header/'), $imageName);
             $setting->header_logo = $imageName;
         }
 
         if (request()->hasFile('fab_icon')) {
 
             if($setting->fab_icon){
-                unlink(public_path('OthersSettings/'.$setting->fab_icon));
+                unlink(public_path('OthersSettings/fab_icon/'.$setting->fab_icon));
             }
 
             $image = request()->file('fab_icon');
             $imageName = time().'_'.$image->getClientOriginalName();
-            $image->move(public_path('OthersSettings'), $imageName);
+            $image->move(public_path('OthersSettings/fab_icon/'), $imageName);
             $setting->fab_icon = $imageName;
         }
         
         if (request()->hasFile('footer_logo')) {
 
             if($setting->footer_logo){
-                unlink(public_path('OthersSettings/'.$setting->footer_logo));
+                unlink(public_path('OthersSettings/footer/'.$setting->footer_logo));
             }
 
             $image = request()->file('footer_logo');
             $imageName = time().'_'.$image->getClientOriginalName();
-            $image->move(public_path('OthersSettings'), $imageName);
+            $image->move(public_path('OthersSettings/footer/'), $imageName);
             $setting->footer_logo = $imageName;
         }
 
