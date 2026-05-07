@@ -4,25 +4,29 @@ use App\Http\Controllers\BackedByAmyntaGroupController;
 use App\Http\Controllers\BackedStrengthAmyntaController;
 use App\Http\Controllers\CommitmentController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ContingencyLeadershipController;
+use App\Http\Controllers\CoreCoverageController;
 use App\Http\Controllers\CorporateCreditController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GetInTouchController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\LongtermCommitmentController;
+use App\Http\Controllers\MarketExperienceController;
+use App\Http\Controllers\MortgageCreditController;
+use App\Http\Controllers\OurPhilosophyController;
+use App\Http\Controllers\PortfolioCreditController;
 use App\Http\Controllers\ReachOutController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
 use App\Http\Controllers\StructureController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\UnderwriteController;
-use App\Http\Controllers\TeamOverviewController;
-use App\Http\Controllers\MortgageCreditController;
 use App\Http\Controllers\StructuredSolutionController;
-use App\Http\Controllers\PortfolioCreditController;
-use App\Http\Controllers\CoreCoverageController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TeamOverviewController;
+use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\UnderwritingApproachController;
-use App\Http\Controllers\ContingencyLeadershipController;
+use App\Http\Controllers\CoreReinsuranceSolutionController;
 use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -171,6 +175,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Contingency Leadership
     Route::get('/contingency-leadership', [ContingencyLeadershipController::class, 'index'])->name('contingencyLeadership.index');
     Route::post('/contingency-leadership/update', [ContingencyLeadershipController::class, 'update'])->name('contingencyLeadership.update');
+
+    // Core Reinsurance Solutions
+    Route::get('/core-reinsurance-solution', [CoreReinsuranceSolutionController::class, 'index'])->name('coreReinsuranceSolution.index');
+    Route::post('/core-reinsurance-solution/update', [CoreReinsuranceSolutionController::class, 'update'])->name('coreReinsuranceSolution.update');
+
+    // Our Philosophy
+    Route::get('/our-philosophy', [OurPhilosophyController::class, 'index'])->name('ourPhilosophy.index');
+    Route::post('/our-philosophy/update', [OurPhilosophyController::class, 'update'])->name('ourPhilosophy.update');
+
+    // Market Experience
+    Route::get('/market-experience', [MarketExperienceController::class, 'index'])->name('marketExperience.index');
+    Route::post('/market-experience/update', [MarketExperienceController::class, 'update'])->name('marketExperience.update');
+
+    // Long Term Commitment
+    Route::get('/long-term-commitment', [LongtermCommitmentController::class, 'index'])->name('longtermCommitment.index');
+    Route::post('/long-term-commitment/update', [LongtermCommitmentController::class, 'update'])->name('longtermCommitment.update');
 
 });
 

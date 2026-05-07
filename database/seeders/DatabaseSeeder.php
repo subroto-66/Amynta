@@ -26,6 +26,10 @@ class DatabaseSeeder extends Seeder
             // MortgageCreditSeeder::class,
             // PortfolioCreditSeeder::class,
             // ContingencyLeadershipSeeder::class
+            // LongtermCommitmentSeeder::class
+            // MarketExperienceSeeder::class,
+            // OurPhilosophySeeder::class
+            // CoreReinsuranceSolutionSeeder::class,
         ]);
     }
 }

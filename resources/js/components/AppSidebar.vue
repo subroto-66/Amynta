@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { CreditCard, FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, StepForwardIcon, Users2Icon } from 'lucide-vue-next';
+import { Cast, CreditCard, FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, StepForwardIcon, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -99,6 +99,29 @@ const mainNavItems: NavItem[] = [
                 title: 'Contingency Leadership',
                 href: '/contingency-leadership',
             }
+        ]
+    },
+    {
+        title: 'Excess Reinsurance',
+        icon: Cast,
+        subMenu: [
+            {
+                title: 'Core Reinsurance Solution',
+                href: '/core-reinsurance-solution',
+            },
+            {
+                title: 'Our Philosophy',
+                href: '/our-philosophy',
+            },
+            {
+                title: 'Market Experience',
+                href: '/market-experience',
+            },
+            {
+                title: 'Long Term Commitment',
+                href: '/long-term-commitment',
+            }
+            
         ]
     },
     {
