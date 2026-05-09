@@ -39,6 +39,12 @@ use App\Http\Controllers\NotConfusionController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
+use Inertia\Inertia;
+use App\Models\Faq;
+use App\Models\Team;
+use App\Models\ContactUs;
+use App\Models\Specialist;
+
 Route::inertia('/', 'Welcome', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
@@ -49,7 +55,16 @@ Route::get('/register', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::inertia('dashboard', 'Dashboard')->name('dashboard');
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard', [
+            'faq_count' => Faq::count(),
+            'team_count' => Team::count(),
+            'contact_count' => ContactUs::count(),
+            'specialist_count' => Specialist::count(),
+        ]);
+    })->name('dashboard');
+
 
     // Hero
     Route::get('/hero', [HeroController::class, 'index'])->name('hero.index');
