@@ -110,6 +110,10 @@ const mainNavItems: NavItem[] = [
                 href: '/our-process',
             },
             {
+                title: 'Model Built',
+                href: '/model-built',
+            },
+            {
                 title: 'Review',
                 href: '/review',
             },

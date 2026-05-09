@@ -31,6 +31,7 @@ use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\UnderwritingApproachController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\WorkingPlanController;
+use App\Http\Controllers\ModelBuiltController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -182,6 +183,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/our-process/edit/{id}', [OurProcessController::class, 'edit'])->name('ourProcess.edit');
     Route::post('/our-process/update/{id}', [OurProcessController::class, 'update'])->name('ourProcess.update');
     Route::delete('/our-process/destroy/{id}', [OurProcessController::class, 'destroy'])->name('ourProcess.destroy');
+
+    // Model Built
+    Route::get('/model-built', [ModelBuiltController::class, 'index'])->name('modelBuilt.index');
+    Route::get('/model-built/create', [ModelBuiltController::class, 'create'])->name('modelBuilt.create');
+    Route::post('/model-built/store', [ModelBuiltController::class, 'store'])->name('modelBuilt.store');
+    Route::get('/model-built/edit/{id}', [ModelBuiltController::class, 'edit'])->name('modelBuilt.edit');
+    Route::post('/model-built/update/{id}', [ModelBuiltController::class, 'update'])->name('modelBuilt.update');
+    Route::delete('/model-built/destroy/{id}', [ModelBuiltController::class, 'destroy'])->name('modelBuilt.destroy');
 
     // Review
     Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
