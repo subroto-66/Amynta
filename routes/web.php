@@ -6,6 +6,7 @@ use App\Http\Controllers\CommitmentController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ContingencyLeadershipController;
 use App\Http\Controllers\CoreCoverageController;
+use App\Http\Controllers\CoreReinsuranceSolutionController;
 use App\Http\Controllers\CorporateCreditController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\FaqController;
@@ -15,8 +16,10 @@ use App\Http\Controllers\LongtermCommitmentController;
 use App\Http\Controllers\MarketExperienceController;
 use App\Http\Controllers\MortgageCreditController;
 use App\Http\Controllers\OurPhilosophyController;
+use App\Http\Controllers\OurProcessController;
 use App\Http\Controllers\PortfolioCreditController;
 use App\Http\Controllers\ReachOutController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\SpecialtyRiskController;
@@ -26,8 +29,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TeamOverviewController;
 use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\UnderwritingApproachController;
-use App\Http\Controllers\CoreReinsuranceSolutionController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\WorkingPlanController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -171,6 +174,26 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/underwriting-approach/edit/{id}', [UnderwritingApproachController::class, 'edit'])->name('underwritingApproach.edit');
     Route::post('/underwriting-approach/update/{id}', [UnderwritingApproachController::class, 'update'])->name('underwritingApproach.update');
     Route::delete('/underwriting-approach/destroy/{id}', [UnderwritingApproachController::class, 'destroy'])->name('underwritingApproach.destroy');
+
+    // Our Process
+    Route::get('/our-process', [OurProcessController::class, 'index'])->name('ourProcess.index');
+    Route::get('/our-process/create', [OurProcessController::class, 'create'])->name('ourProcess.create');
+    Route::post('/our-process/store', [OurProcessController::class, 'store'])->name('ourProcess.store');
+    Route::get('/our-process/edit/{id}', [OurProcessController::class, 'edit'])->name('ourProcess.edit');
+    Route::post('/our-process/update/{id}', [OurProcessController::class, 'update'])->name('ourProcess.update');
+    Route::delete('/our-process/destroy/{id}', [OurProcessController::class, 'destroy'])->name('ourProcess.destroy');
+
+    // Review
+    Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
+    Route::get('/review/create', [ReviewController::class, 'create'])->name('review.create');
+    Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
+    Route::get('/review/edit/{id}', [ReviewController::class, 'edit'])->name('review.edit');
+    Route::post('/review/update/{id}', [ReviewController::class, 'update'])->name('review.update');
+    Route::delete('/review/destroy/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
+    // working plan
+    Route::get('/working-plan', [WorkingPlanController::class, 'index'])->name('workingPlan.index');
+    Route::post('/working-plan/update', [WorkingPlanController::class, 'update'])->name('workingPlan.update');
 
     // Contingency Leadership
     Route::get('/contingency-leadership', [ContingencyLeadershipController::class, 'index'])->name('contingencyLeadership.index');

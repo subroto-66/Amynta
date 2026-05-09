@@ -8,7 +8,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { Link } from '@inertiajs/vue3';
-import { Cast, CreditCard, FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, StepForwardIcon, Users2Icon } from 'lucide-vue-next';
+import { BriefcaseMedical, Cast, CreditCard, FileQuestion, House, ImageIcon, LayoutGrid, Mail, Settings, StepForwardIcon, Users2Icon } from 'lucide-vue-next';
 
 import type { NavItem } from '@/types';
 
@@ -102,6 +102,24 @@ const mainNavItems: NavItem[] = [
         ]
     },
     {
+        title: 'Medical Stop Loss',
+        icon: BriefcaseMedical,
+        subMenu: [
+            {
+                title: 'Our Process',
+                href: '/our-process',
+            },
+            {
+                title: 'Review',
+                href: '/review',
+            },
+            {
+                title: 'Working Plan',
+                href: '/working-plan',
+            }
+        ]
+    },
+    {
         title: 'Excess Reinsurance',
         icon: Cast,
         subMenu: [
@@ -121,7 +139,7 @@ const mainNavItems: NavItem[] = [
                 title: 'Long Term Commitment',
                 href: '/long-term-commitment',
             }
-            
+
         ]
     },
     {

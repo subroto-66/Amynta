@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             // MarketExperienceSeeder::class,
             // OurPhilosophySeeder::class
             // CoreReinsuranceSolutionSeeder::class,
+            // WorkingPlanSeeder::class,
         ]);
     }
 }
