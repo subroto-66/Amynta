@@ -64,9 +64,10 @@ const submit = () => {
                             <select v-model="form.page"
                                 class="border border-gray-300 rounded px-3 py-2 w-full mt-1 text-sm">
                                 <option value="">Select page</option>
-                                <option value="home">Home</option>
-                                <option value="about">About</option>
-                                <option value="high">High</option>
+                                <option value="credit">Credit</option>
+                                <option value="contingency">Contingency</option>
+                                <option value="medical-stop-loss">Medical Stop Loss</option>
+                                <option value="excess-reinsurance">Excess Reinsurance</option>
                             </select>
                             <span class="text-red-500 text-sm" v-if="form.errors.page">
                                 {{ form.errors.page }}

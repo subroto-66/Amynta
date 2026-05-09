@@ -18,6 +18,8 @@ Route::get('/footer', [HomeController::class, 'footer']);
 // Divisions
 Route::get('/credit', [DivisionController::class, 'credit']);
 Route::get('/contingency', [DivisionController::class, 'contingency']);
+Route::get('/medical-stop-loss', [DivisionController::class, 'medicalStopLoss']);
+Route::get('/excess-reinsurance', [DivisionController::class, 'excessReinsurance']);
 
 //About
 Route::get('/about', [AboutController::class, 'about']);

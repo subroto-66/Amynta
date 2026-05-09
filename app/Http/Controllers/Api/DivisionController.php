@@ -11,7 +11,20 @@ use App\Models\MortgageCredit;
 use App\Models\TeamOverview;
 use App\Models\UnderwritingApproach;
 use App\Models\ContingencyLeadership;
+use App\Models\TheProblem;
+use App\Models\NotConfusion;
+use App\Models\MakesDifferent;
+use App\Models\OurProcess;
+use App\Models\Item;
+use App\Models\ModelBuilt;
+use App\Models\BuiltRfpForm;
+use App\Models\Review;
+use App\Models\WorkingPlan;
 use App\Models\CoreCoverage;
+use App\Models\CoreReinsuranceSolution;
+use App\Models\OurPhilosophy;
+use App\Models\MarketExperience;
+use App\Models\LongtermCommitment;
 use App\Models\Faq;
 
 class DivisionController
@@ -56,6 +69,62 @@ class DivisionController
             "ContingencyLeadership" => $ContingencyLeadership,
             "faq" => $faq,
 
+        ], 200);
+    }
+
+    public function medicalStopLoss(){
+
+        $hero = Hero::select('title_one','highlight_text','description_one','primary_button_text','primary_button_link', 'secondary_button_text', 'secondary_button_link')->where('page_name', 'medical-stop-loss')->first(); 
+        $theProblem = TheProblem::first();
+        $theProblemItem = Item::where('section_name', 'the_problem')->get();
+        $notConfishion = NotConfusion::first();
+        $notConfishionItem = Item::where('section_name', 'not_confusion')->get();
+        $makeDifferenc = MakesDifferent::get();
+        $ourProcess = OurProcess::get();
+        $modelBuilt = ModelBuilt::first();
+        $builtRfpForm = BuiltRfpForm::first();
+        $reviews = Review::orderBy('id', 'desc')->get();
+        $workingPlan = WorkingPlan::first();
+        $faq = Faq::where('page', 'medical-stop-loss')->get();
+
+        return response()->json([
+
+            "status" => "success",
+            "hero" => $hero,
+            "the_problem" => $theProblem,
+            "the_problem_item" => $theProblemItem,
+            "not_confusion" => $notConfishion,
+            "not_confusion_item" => $notConfishionItem,
+            "make_different" => $makeDifferenc,
+            "our_process" => $ourProcess,
+            "model_builts" => $modelBuilt,
+            "built_rfp_form" => $builtRfpForm,
+            "reviews" => $reviews,
+            "working_plan" => $workingPlan,
+            "faq" => $faq,
+
+        ], 200);
+    }
+
+    public function excessReinsurance(){
+
+        $hero = Hero::select('highlight_text','description_one','primary_button_text','primary_button_link', 'secondary_button_text', 'secondary_button_link')->where('page_name', 'excess-reinsurance')->first(); 
+        $faq = Faq::where('page', 'excess-reinsurance')->get();
+        $CoreReinsuranceSolution = CoreReinsuranceSolution::first();
+        $coreReinsuranceSolutionItem = Item::where('section_name', 'core_reinsurance_solution')->get();
+        $ourPhilosphy = OurPhilosophy::first();
+        $marketExpertise = MarketExperience::first();
+        $LongtermCommitment = LongtermCommitment::first();
+        return response()->json([
+
+            "status" => "success",
+            "hero" => $hero,
+            "core_reinsurance_solution" => $CoreReinsuranceSolution,
+            "core_reinsurance_solution_item" => $coreReinsuranceSolutionItem,
+            "our_philosphy" => $ourPhilosphy,
+            "market_expertise" => $marketExpertise,
+            "longterm_commitment" => $LongtermCommitment,
+            "faq" => $faq
         ], 200);
     }
 }
