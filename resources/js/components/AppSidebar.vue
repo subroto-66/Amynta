@@ -106,12 +106,20 @@ const mainNavItems: NavItem[] = [
         icon: BriefcaseMedical,
         subMenu: [
             {
+                title: 'Makes Different',
+                href: '/makes-different',
+            },
+            {
                 title: 'Our Process',
                 href: '/our-process',
             },
             {
                 title: 'Model Built',
                 href: '/model-built',
+            },
+            {
+                title: 'Built Rfp Form',
+                href: '/built-rfp-form',
             },
             {
                 title: 'Review',

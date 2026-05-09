@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             // OurPhilosophySeeder::class
             // CoreReinsuranceSolutionSeeder::class,
             // WorkingPlanSeeder::class,
+            BuiltRfpFormSeeder::class
         ]);
     }
 }

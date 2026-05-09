@@ -29,6 +29,8 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TeamOverviewController;
 use App\Http\Controllers\UnderwriteController;
 use App\Http\Controllers\UnderwritingApproachController;
+use App\Http\Controllers\BuiltRfpFormController;
+use App\Http\Controllers\MakesDifferentController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\WorkingPlanController;
 use App\Http\Controllers\ModelBuiltController;
@@ -176,6 +178,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/underwriting-approach/update/{id}', [UnderwritingApproachController::class, 'update'])->name('underwritingApproach.update');
     Route::delete('/underwriting-approach/destroy/{id}', [UnderwritingApproachController::class, 'destroy'])->name('underwritingApproach.destroy');
 
+    // Makes Different
+    Route::get('/makes-different', [MakesDifferentController::class, 'index'])->name('makesDifferent.index');
+    Route::get('/makes-different/create', [MakesDifferentController::class, 'create'])->name('makesDifferent.create');
+    Route::post('/makes-different/store', [MakesDifferentController::class, 'store'])->name('makesDifferent.store');
+    Route::get('/makes-different/edit/{id}', [MakesDifferentController::class, 'edit'])->name('makesDifferent.edit');
+    Route::post('/makes-different/update/{id}', [MakesDifferentController::class, 'update'])->name('makesDifferent.update');
+    Route::delete('/makes-different/destroy/{id}', [MakesDifferentController::class, 'destroy'])->name('makesDifferent.destroy');
+
     // Our Process
     Route::get('/our-process', [OurProcessController::class, 'index'])->name('ourProcess.index');
     Route::get('/our-process/create', [OurProcessController::class, 'create'])->name('ourProcess.create');
@@ -191,6 +201,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/model-built/edit/{id}', [ModelBuiltController::class, 'edit'])->name('modelBuilt.edit');
     Route::post('/model-built/update/{id}', [ModelBuiltController::class, 'update'])->name('modelBuilt.update');
     Route::delete('/model-built/destroy/{id}', [ModelBuiltController::class, 'destroy'])->name('modelBuilt.destroy');
+
+    // Built Rfp Form
+    Route::get('/built-rfp-form', [BuiltRfpFormController::class, 'index'])->name('builtRfpForm.index');
+    Route::post('/built-rfp-form/update', [BuiltRfpFormController::class, 'update'])->name('builtRfpForm.update');
 
     // Review
     Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
