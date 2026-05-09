@@ -106,6 +106,14 @@ const mainNavItems: NavItem[] = [
         icon: BriefcaseMedical,
         subMenu: [
             {
+                title: 'The Problems',
+                href: '/the-problem',
+            },
+            {
+                title: 'Not Confusion',
+                href: '/not-confusion',
+            },
+            {
                 title: 'Makes Different',
                 href: '/makes-different',
             },

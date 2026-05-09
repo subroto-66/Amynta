@@ -34,6 +34,8 @@ use App\Http\Controllers\MakesDifferentController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\WorkingPlanController;
 use App\Http\Controllers\ModelBuiltController;
+use App\Http\Controllers\TheProblemController;
+use App\Http\Controllers\NotConfusionController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -177,6 +179,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/underwriting-approach/edit/{id}', [UnderwritingApproachController::class, 'edit'])->name('underwritingApproach.edit');
     Route::post('/underwriting-approach/update/{id}', [UnderwritingApproachController::class, 'update'])->name('underwritingApproach.update');
     Route::delete('/underwriting-approach/destroy/{id}', [UnderwritingApproachController::class, 'destroy'])->name('underwritingApproach.destroy');
+
+    // The Problem
+    Route::get('/the-problem', [TheProblemController::class, 'index'])->name('theProblem.index');
+    Route::post('/the-problem/update', [TheProblemController::class, 'update'])->name('theProblem.update');
+
+    // Not Confusion
+    Route::get('/not-confusion', [NotConfusionController::class, 'index'])->name('notConfusion.index');
+    Route::post('/not-confusion/update', [NotConfusionController::class, 'update'])->name('notConfusion.update');
 
     // Makes Different
     Route::get('/makes-different', [MakesDifferentController::class, 'index'])->name('makesDifferent.index');
