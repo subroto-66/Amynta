@@ -44,7 +44,7 @@ class ReachOutController
         $reachOut->address_two = $request->address_two;
         $reachOut->save();
 
-        return redirect()->route('reachOut.index')->with('success', 'Reach Out updated successfully.');
+        return redirect()->route('reachOut.index')->with('message', 'Reach Out updated successfully.');
     }
 
     public function edit($id)
@@ -94,7 +94,7 @@ class ReachOutController
         $reachOut->address_two = $request->address_two;
         $reachOut->save();
 
-        return redirect()->route('reachOut.index')->with('success', 'Reach Out updated successfully.');
+        return redirect()->route('reachOut.index')->with('message', 'Reach Out updated successfully.');
     }
 
     public function destroy($id)
@@ -108,6 +108,6 @@ class ReachOutController
 
         $reachOut->delete();
 
-        return redirect()->route('reachOut.index')->with('success', 'Reach Out deleted successfully.');
+        return redirect()->route('reachOut.index')->with('message', 'Reach Out deleted successfully.');
     }
 }

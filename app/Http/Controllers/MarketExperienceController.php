@@ -50,6 +50,6 @@ class MarketExperienceController
         $data->market_experience_quote = $request->market_experience_quote;
         $data->save();
 
-        return redirect()->route('marketExperience.index')->with('success', 'Market Experience updated successfully.');
+        return redirect()->route('marketExperience.index')->with('message', 'Market Experience updated successfully.');
     }
 }

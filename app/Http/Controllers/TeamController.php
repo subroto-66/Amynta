@@ -52,7 +52,7 @@ class TeamController
         $team->linkedin_link = $request->linkedin_link;
         $team->save();
 
-        return redirect()->route('teams.index')->with('success', 'Team member created successfully.');
+        return redirect()->route('teams.index')->with('message', 'Team member created successfully.');
     }
 
     public function edit($id)
@@ -104,7 +104,7 @@ class TeamController
         $team->linkedin_link = $request->linkedin_link;
         $team->save();
 
-        return redirect()->route('teams.index')->with('success', 'Team member updated successfully.');
+        return redirect()->route('teams.index')->with('message', 'Team member updated successfully.');
     }
 
     public function destroy($id)
@@ -120,6 +120,6 @@ class TeamController
 
         $team->delete();
 
-        return redirect()->route('teams.index')->with('success', 'Team deleted successfully.');
+        return redirect()->route('teams.index')->with('message', 'Team deleted successfully.');
     }
 }

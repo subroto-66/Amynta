@@ -60,6 +60,6 @@ class CorporateCreditController
         $corporateCredit->contact_item_two_icon = $request->contact_item_two_icon;
         $corporateCredit->save();
 
-        return redirect()->route('corporateCredit.index')->with('success', 'Corporate Credit updated successfully.');
+        return redirect()->route('corporateCredit.index')->with('message', 'Corporate Credit updated successfully.');
     }
 }

@@ -47,7 +47,7 @@ class ModelBuiltController
 
         $modelBuilt->save();
         
-        return redirect()->route('modelBuilt.index')->with('success', 'Model Built created successfully.');
+        return redirect()->route('modelBuilt.index')->with('message', 'Model Built created successfully.');
     }
 
     public function edit($id)
@@ -86,14 +86,14 @@ class ModelBuiltController
 
         $modelBuilt->save();
         
-        return redirect()->route('modelBuilt.index')->with('success', 'Model Built updated successfully.');
+        return redirect()->route('modelBuilt.index')->with('message', 'Model Built updated successfully.');
     }
 
     public function destroy($id)
     {
         $modelBuilt = ModelBuilt::find($id);
         $modelBuilt->delete();
-        return redirect()->route('modelBuilt.index')->with('success', 'Model Built deleted successfully.');
+        return redirect()->route('modelBuilt.index')->with('message', 'Model Built deleted successfully.');
 
     }
 }

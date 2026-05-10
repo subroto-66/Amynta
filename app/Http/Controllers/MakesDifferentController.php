@@ -35,7 +35,7 @@ class MakesDifferentController
         $make_different->type = $request->type;
         $make_different->save();
 
-        return redirect()->route('makesDifferent.index')->with('success', 'Makes Different created successfully');
+        return redirect()->route('makesDifferent.index')->with('message', 'Makes Different created successfully');
     }
 
     public function edit($id)
@@ -58,7 +58,7 @@ class MakesDifferentController
         $make_different->type = $request->type;
         $make_different->save();
         
-        return redirect()->route('makesDifferent.index')->with('success', 'Makes Different updated successfully');
+        return redirect()->route('makesDifferent.index')->with('message', 'Makes Different updated successfully');
     }
 
     public function destroy($id)
@@ -66,6 +66,6 @@ class MakesDifferentController
         $make_different = MakesDifferent::find($id);
         $make_different->delete();
 
-        return redirect()->route('makesDifferent.index')->with('success', 'Makes Different deleted successfully');
+        return redirect()->route('makesDifferent.index')->with('message', 'Makes Different deleted successfully');
     }
 }

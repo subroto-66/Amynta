@@ -35,7 +35,7 @@ class StructuredSolutionController
         $structuredSolution->svg_icon = $request->svg_icon;
         $structuredSolution->save();
 
-        return redirect()->route('structuredSolution.index')->with('success', 'Structured Solution created successfully.');
+        return redirect()->route('structuredSolution.index')->with('message', 'Structured Solution created successfully.');
     }
 
     public function edit($id)
@@ -61,7 +61,7 @@ class StructuredSolutionController
         $structuredSolution->svg_icon = $request->svg_icon;
         $structuredSolution->save();
 
-        return redirect()->route('structuredSolution.index')->with('success', 'Structured Solution updated successfully.');
+        return redirect()->route('structuredSolution.index')->with('message', 'Structured Solution updated successfully.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class StructuredSolutionController
         $structuredSolution = StructuredSolution::find($id);
         $structuredSolution->delete();
 
-        return redirect()->route('structuredSolution.index')->with('success', 'Structured Solution deleted successfully.');
+        return redirect()->route('structuredSolution.index')->with('message', 'Structured Solution deleted successfully.');
     }
 }

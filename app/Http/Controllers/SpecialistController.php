@@ -42,7 +42,7 @@ class SpecialistController
         $specialist->status = $request->status;
         $specialist->save();
 
-        return redirect()->route('specialists.index')->with('success', 'Specalist created successfully.');
+        return redirect()->route('specialists.index')->with('message', 'Specalist created successfully.');
     }
 
     public function edit($id)
@@ -84,7 +84,7 @@ class SpecialistController
         $specialist->status = $request->status;
         $specialist->save();
 
-        return redirect()->route('specialists.index')->with('success', 'Specialist updated successfully.');
+        return redirect()->route('specialists.index')->with('message', 'Specialist updated successfully.');
     }
 
     public function destroy($id)
@@ -100,6 +100,6 @@ class SpecialistController
 
         $specialist->delete();
 
-        return redirect()->route('specialists.index')->with('success', 'Specialist deleted successfully.');
+        return redirect()->route('specialists.index')->with('message', 'Specialist deleted successfully.');
     }
 }

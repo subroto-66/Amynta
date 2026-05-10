@@ -41,6 +41,6 @@ class WorkingPlanController
         $workingPlan->three_button_link = $request->three_button_link;
         $workingPlan->save();
         
-        return redirect()->route('workingPlan.index')->with('success', 'Working Plan updated successfully.');
+        return redirect()->route('workingPlan.index')->with('message', 'Working Plan updated successfully.');
     }
 }

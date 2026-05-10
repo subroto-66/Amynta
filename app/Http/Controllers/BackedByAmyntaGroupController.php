@@ -52,6 +52,6 @@ class BackedByAmyntaGroupController
             ]);
         }
 
-        return redirect()->route('backedAmyntaGroup.index')->with('success', 'Backed by Amynta Group settings updated successfully.');
+        return redirect()->route('backedAmyntaGroup.index')->with('message', 'Backed by Amynta Group settings updated successfully.');
     }
 }

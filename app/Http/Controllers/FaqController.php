@@ -34,7 +34,7 @@ class FaqController
         $faq->status = $request->status;
         $faq->save();
 
-        return redirect()->route('faqs.index')->with('success', 'FAQ created successfully.');
+        return redirect()->route('faqs.index')->with('message', 'FAQ created successfully.');
     }
 
     public function edit(Faq $faq)
@@ -58,13 +58,13 @@ class FaqController
         $faq->status = $request->status;
         $faq->save();
 
-        return redirect()->route('faqs.index')->with('success', 'FAQ updated successfully.');
+        return redirect()->route('faqs.index')->with('message', 'FAQ updated successfully.');
     }
 
     public function destroy(Faq $faq)
     {
         $faq->delete();
 
-        return redirect()->route('faqs.index')->with('success', 'FAQ deleted successfully.');
+        return redirect()->route('faqs.index')->with('message', 'FAQ deleted successfully.');
     }
 }

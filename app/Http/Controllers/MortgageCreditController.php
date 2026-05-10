@@ -37,6 +37,6 @@ class MortgageCreditController
         $mortgageCredit->contact_item_two = $request->contact_item_two;
         $mortgageCredit->save();
 
-        return back()->with('success', 'Mortgage Credit updated successfully');
+        return back()->with('message', 'Mortgage Credit updated successfully');
     }
 }

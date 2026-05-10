@@ -43,6 +43,6 @@ class CommitmentController
         $commitment->secondary_button_link = $request->secondary_button_link;
         $commitment->save();
 
-        return redirect()->route('commitment.index')->with('success', 'Commitment updated successfully.');
+        return redirect()->route('commitment.index')->with('message', 'Commitment updated successfully.');
     }
 }

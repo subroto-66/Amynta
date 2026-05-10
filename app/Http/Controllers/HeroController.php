@@ -62,7 +62,7 @@ class HeroController
        $hero->short_description_two = $request->short_description_two;
        $hero->save();
        
-        return redirect()->route('hero.index')->with('success', 'Hero created successfully.');    
+        return redirect()->route('hero.index')->with('message', 'Hero created successfully.');    
     }
 
     public function edit($id)
@@ -115,14 +115,14 @@ class HeroController
         $hero->short_description_one = $request->short_description_one;
         $hero->short_description_two = $request->short_description_two;
         $hero->save();
-        return redirect()->route('hero.index')->with('success', 'Hero updated successfully.');
+        return redirect()->route('hero.index')->with('message', 'Hero updated successfully.');
     }
 
     public function destroy($id)
     {
         $hero = Hero::find($id);
         $hero->delete();
-        return redirect()->route('hero.index')->with('success', 'Hero deleted successfully.');
+        return redirect()->route('hero.index')->with('message', 'Hero deleted successfully.');
     }
     
 

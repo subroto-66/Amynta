@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
-            $table->string('insure_title')->nullable();
+            $table->text('insure_title')->nullable();
             $table->text('insure_description')->nullable();
             $table->string('insure_icon')->nullable();
 
@@ -23,15 +23,15 @@ return new class extends Migration
             $table->string('covered_item_one_title')->nullable();
             $table->string('covered_item_two_title')->nullable();
             $table->string('covered_item_three_title')->nullable();
-            $table->string('covered_item_one_icon')->nullable();
-            $table->string('covered_item_two_icon')->nullable();
-            $table->string('covered_item_three_icon')->nullable();
+            $table->text('covered_item_one_icon')->nullable();
+            $table->text('covered_item_two_icon')->nullable();
+            $table->text('covered_item_three_icon')->nullable();
 
             $table->string('contact_title')->nullable();
             $table->string('contact_item_one_title')->nullable();
             $table->string('contact_item_two_title')->nullable();
-            $table->string('contact_item_one_icon')->nullable();
-            $table->string('contact_item_two_icon')->nullable();
+            $table->text('contact_item_one_icon')->nullable();
+            $table->text('contact_item_two_icon')->nullable();
 
             $table->timestamps();
         });

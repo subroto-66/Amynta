@@ -42,6 +42,6 @@ class GetInTouchController
         $getInTouch->get_in_touch_secondary_button_url = $request->get_in_touch_secondary_button_url;
         $getInTouch->save();
 
-        return redirect()->route('getInTouch.index')->with('success', 'Get in touch updated successfully.');
+        return redirect()->route('getInTouch.index')->with('message', 'Get in touch updated successfully.');
     }
 }

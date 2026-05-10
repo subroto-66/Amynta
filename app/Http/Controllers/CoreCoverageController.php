@@ -42,7 +42,7 @@ class CoreCoverageController
 
       $coreCoverage->save();
 
-      return redirect()->route('coreCoverage.index')->with('success', 'Core Coverage created successfully.');
+      return redirect()->route('coreCoverage.index')->with('message', 'Core Coverage created successfully.');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class CoreCoverageController
 
         $coreCoverage->save();
 
-        return redirect()->route('coreCoverage.index')->with('success', 'Core Coverage updated successfully.');
+        return redirect()->route('coreCoverage.index')->with('message', 'Core Coverage updated successfully.');
     }
 
     public function destroy($id)
@@ -90,6 +90,6 @@ class CoreCoverageController
         }
         $coreCoverage->delete();
 
-        return redirect()->route('coreCoverage.index')->with('success', 'Core Coverage deleted successfully.');
+        return redirect()->route('coreCoverage.index')->with('message', 'Core Coverage deleted successfully.');
     }
 }

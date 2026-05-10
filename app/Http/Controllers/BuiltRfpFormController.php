@@ -45,7 +45,7 @@ class BuiltRfpFormController
         $builtRfpForm->rfp_footer_text = $request->rfp_footer_text;
         $builtRfpForm->save();
 
-        return redirect()->route('builtRfpForm.index')->with('success', 'Built Rfp Form updated successfully');
+        return redirect()->route('builtRfpForm.index')->with('message', 'Built Rfp Form updated successfully');
     }
 
 }

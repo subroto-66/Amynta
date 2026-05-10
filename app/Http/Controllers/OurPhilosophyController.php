@@ -48,6 +48,6 @@ class OurPhilosophyController
         $data->item_five = $request->item_five;
         $data->save();
 
-        return redirect()->route('ourPhilosophy.index')->with('success', 'Our Philosophy updated successfully.');
+        return redirect()->route('ourPhilosophy.index')->with('message', 'Our Philosophy updated successfully.');
     }
 }

@@ -52,6 +52,6 @@ class LongtermCommitmentController
         $data->item_four = $request->item_four;
         $data->save();
 
-        return redirect()->route('longtermCommitment.index')->with('success', 'Long Term Commitment updated successfully.');
+        return redirect()->route('longtermCommitment.index')->with('message', 'Long Term Commitment updated successfully.');
     }
 }

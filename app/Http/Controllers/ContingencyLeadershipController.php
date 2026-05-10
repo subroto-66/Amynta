@@ -73,6 +73,6 @@ class ContingencyLeadershipController
         $contingencyLeadership->save();
 
 
-        return redirect()->route('contingencyLeadership.index')->with('success', 'Contingency Leadership updated successfully.');
+        return redirect()->route('contingencyLeadership.index')->with('message', 'Contingency Leadership updated successfully.');
     }
 }

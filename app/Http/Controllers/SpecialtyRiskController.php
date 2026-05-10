@@ -35,7 +35,7 @@ class SpecialtyRiskController
         $specialtyRisk->description = $request->description;
         $specialtyRisk->save();
 
-        return redirect()->route('specialty-risk.index')->with('success', 'Specialty Risk created successfully.');
+        return redirect()->route('specialty-risk.index')->with('message', 'Specialty Risk created successfully.');
     }
 
     public function edit($id)
@@ -60,13 +60,13 @@ class SpecialtyRiskController
         $specialtyRisk->description = $request->description;
         $specialtyRisk->save();
 
-        return redirect()->route('specialty-risk.index')->with('success', 'Specialty Risk updated successfully.');
+        return redirect()->route('specialty-risk.index')->with('message', 'Specialty Risk updated successfully.');
     }
 
     public function destroy($id)
     {
         $specialtyRisk = SpecialtyRisk::find($id);
         $specialtyRisk->delete();
-        return redirect()->route('specialty-risk.index')->with('success', 'Specialty Risk deleted successfully.');
+        return redirect()->route('specialty-risk.index')->with('message', 'Specialty Risk deleted successfully.');
     }
 }

@@ -83,6 +83,6 @@ class SettingController
 
         $setting->save();
 
-        return redirect()->route('othersSettings.index')->with('success', 'Others Settings updated successfully.');
+        return redirect()->route('othersSettings.index')->with('message', 'Others Settings updated successfully.');
     }
 }

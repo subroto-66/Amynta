@@ -56,6 +56,6 @@ class TeamOverviewController
         $teamOverview->secondary_button_link = $request->secondary_button_link;
         $teamOverview->save();
 
-        return back()->with('success', 'Team Overview updated successfully.');
+        return back()->with('message', 'Team Overview updated successfully.');
     }
 }

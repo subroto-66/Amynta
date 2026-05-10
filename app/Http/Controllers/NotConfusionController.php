@@ -63,6 +63,6 @@ class NotConfusionController
             ]);
         }
 
-        return redirect()->route('notConfusion.index')->with('success', 'Not Confusion updated successfully.');
+        return redirect()->route('notConfusion.index')->with('message', 'Not Confusion updated successfully.');
     }
 }

@@ -40,13 +40,13 @@ class ContactUsController
         $contact->message = $request->message;
         $contact->status = $request->status;
         $contact->save();
-        return redirect()->route('contact.index')->with('success', 'Contact Us updated successfully.');
+        return redirect()->route('contact.index')->with('message', 'Contact Us updated successfully.');
     }
 
     public function destroy($id){
         $contact = ContactUs::find($id);
         $contact->delete();
-        return redirect()->route('contact.index')->with('success', 'Contact Us deleted successfully.');
+        return redirect()->route('contact.index')->with('message', 'Contact Us deleted successfully.');
     }
 
 

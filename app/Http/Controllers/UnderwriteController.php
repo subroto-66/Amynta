@@ -82,6 +82,6 @@ class UnderwriteController
 
 
 
-        return redirect()->route('underwrite.index')->with('success', 'Underwrite updated successfully.');
+        return redirect()->route('underwrite.index')->with('message', 'Underwrite updated successfully.');
     }
 }

@@ -29,7 +29,7 @@ class BackedStrengthAmyntaController
         $backedStrength->item_four = $request->item_four;
         $backedStrength->save();
 
-        return redirect()->route('backedStrength.index')->with('success', 'Others Settings updated successfully.');
+        return redirect()->route('backedStrength.index')->with('message', 'Others Settings updated successfully.');
     }
 
 

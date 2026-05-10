@@ -40,7 +40,7 @@ class WorkController
         $work->title = $request->title;
         $work->save();
 
-        return redirect()->route('work.index')->with('success', 'Work created successfully');
+        return redirect()->route('work.index')->with('message', 'Work created successfully');
     }
 
     public function edit($id)
@@ -79,7 +79,7 @@ class WorkController
         $work->title = $request->title;
         $work->save();
 
-        return redirect()->route('work.index')->with('success', 'Work updated successfully');
+        return redirect()->route('work.index')->with('message', 'Work updated successfully');
     }
 
     public function destroy($id)
@@ -95,6 +95,6 @@ class WorkController
 
         $work->delete();
 
-        return redirect()->route('work.index')->with('success', 'Work deleted successfully');
+        return redirect()->route('work.index')->with('message', 'Work deleted successfully');
     }
 }

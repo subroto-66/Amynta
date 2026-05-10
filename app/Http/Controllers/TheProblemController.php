@@ -49,6 +49,6 @@ class TheProblemController
             ]);
         }
 
-        return redirect()->route('theProblem.index')->with('success', 'The problem updated successfully.');
+        return redirect()->route('theProblem.index')->with('message', 'The problem updated successfully.');
     }
 }

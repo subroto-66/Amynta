@@ -42,7 +42,7 @@ class StructureController
 
         $structure->save();
 
-        return redirect()->route('structure.index')->with('success', 'Structure created successfully.');
+        return redirect()->route('structure.index')->with('message', 'Structure created successfully.');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class StructureController
 
         $structure->save();
 
-        return redirect()->route('structure.index')->with('success', 'Structure updated successfully.');
+        return redirect()->route('structure.index')->with('message', 'Structure updated successfully.');
     }
 
     public function destroy($id)
@@ -91,6 +91,6 @@ class StructureController
 
         $structure->delete();
 
-        return redirect()->route('structure.index')->with('success', 'Structure deleted successfully.');
+        return redirect()->route('structure.index')->with('message', 'Structure deleted successfully.');
     }
 }

@@ -46,7 +46,7 @@ class OurProcessController
         $ourProcess->description = $request->description;
         $ourProcess->save();
 
-        return redirect()->route('ourProcess.index')->with('success', 'Our Process created successfully.');
+        return redirect()->route('ourProcess.index')->with('message', 'Our Process created successfully.');
     }
 
     public function edit($id)
@@ -87,7 +87,7 @@ class OurProcessController
         $ourProcess->description = $request->description;
         $ourProcess->save();
 
-        return redirect()->route('ourProcess.index')->with('success', 'Our Process updated successfully.');
+        return redirect()->route('ourProcess.index')->with('message', 'Our Process updated successfully.');
     }
 
     public function destroy($id)
@@ -99,6 +99,6 @@ class OurProcessController
         }
         $ourProcess->delete();
 
-        return redirect()->route('ourProcess.index')->with('success', 'Our Process deleted successfully.');
+        return redirect()->route('ourProcess.index')->with('message', 'Our Process deleted successfully.');
     }
 }

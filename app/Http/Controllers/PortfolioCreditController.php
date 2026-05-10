@@ -61,6 +61,6 @@ class PortfolioCreditController
         $portfolioCredit->asset_classes_four_icon = $request->asset_classes_four_icon;
         $portfolioCredit->save();
 
-        return redirect()->route('portfolioCredit.index')->with('success', 'Portfolio Credit updated successfully');
+        return redirect()->route('portfolioCredit.index')->with('message', 'Portfolio Credit updated successfully');
     }
 }

@@ -45,7 +45,7 @@ class UnderwritingApproachController
 
       $underwritingApproach->save();
 
-      return redirect()->route('underwritingApproach.index')->with('success', 'Underwriting Approach created successfully.');
+      return redirect()->route('underwritingApproach.index')->with('message', 'Underwriting Approach created successfully.');
     }
 
     public function edit($id)
@@ -86,7 +86,7 @@ class UnderwritingApproachController
 
         $underwritingApproach->save();
 
-        return redirect()->route('underwritingApproach.index')->with('success', 'Underwriting Approach updated successfully.');
+        return redirect()->route('underwritingApproach.index')->with('message', 'Underwriting Approach updated successfully.');
     }
 
     public function destroy($id)
@@ -98,6 +98,6 @@ class UnderwritingApproachController
         }
         $underwritingApproach->delete();
 
-        return redirect()->route('underwritingApproach.index')->with('success', 'Underwriting Approach deleted successfully.');
+        return redirect()->route('underwritingApproach.index')->with('message', 'Underwriting Approach deleted successfully.');
     }
 }

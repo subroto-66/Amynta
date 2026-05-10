@@ -58,6 +58,6 @@ class CoreReinsuranceSolutionController
             ]);
         }
 
-        return redirect()->route('coreReinsuranceSolution.index')->with('success', 'Core Reinsurance Solution updated successfully.');
+        return redirect()->route('coreReinsuranceSolution.index')->with('message', 'Core Reinsurance Solution updated successfully.');
     }
 }

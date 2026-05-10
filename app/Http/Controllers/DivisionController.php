@@ -47,7 +47,7 @@ class DivisionController
         $division->button_link = $request->button_link;
         $division->save();
 
-        return redirect()->route('divisions.index');
+        return redirect()->route('divisions.index')->with('message', 'Division created successfully.');
     }
 
     public function edit($id)
@@ -89,7 +89,7 @@ class DivisionController
         $division->button_link = $request->button_link;
         $division->save();
 
-        return redirect()->route('divisions.index');
+        return redirect()->route('divisions.index')->with('message', 'Division updated successfully.');
     }
 
     public function destroy($id)
@@ -100,6 +100,6 @@ class DivisionController
         }
         $division->delete();
 
-        return redirect()->route('divisions.index');
+        return redirect()->route('divisions.index')->with('message', 'Division deleted successfully.');
     }
 }
