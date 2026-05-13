@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContingencyLeadership;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\ContingencyLeadership;
-use App\Models\Item;
 
 class ContingencyLeadershipController
 {
     public function index()
     {
         $contingencyLeadership = ContingencyLeadership::first();
+
         return Inertia::render('ContingencyLeadership/Edit', [
-            'contingencyLeadership' => $contingencyLeadership
+            'contingencyLeadership' => $contingencyLeadership,
         ]);
     }
 
@@ -25,7 +25,7 @@ class ContingencyLeadershipController
             'leadership_name' => 'required|string|max:255',
             'leadership_position' => 'required|string|max:255',
             'leadership_description' => 'required',
-            'leadership_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'leadership_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'broker_title' => 'required|string|max:255',
             'broker_description' => 'required',
             'primary_broker_button_text' => 'required|string|max:255',
@@ -37,7 +37,7 @@ class ContingencyLeadershipController
             'brokers_items_three' => 'required|string|max:255',
             'brokers_items_four' => 'required|string|max:255',
             'brokers_items_five' => 'required|string|max:255',
-            'brokers_items_six' => 'required|string|max:255'
+            'brokers_items_six' => 'required|string|max:255',
 
         ]);
 
@@ -59,19 +59,18 @@ class ContingencyLeadershipController
         $contingencyLeadership->brokers_items_five = $request->brokers_items_five;
         $contingencyLeadership->brokers_items_six = $request->brokers_items_six;
 
-        if (request()->hasFile('image')) {
-            if ($contingencyLeadership->image) {
-                unlink(public_path('ContingencyLeadership/'.$contingencyLeadership->image));
+        if ($request->hasFile('leadership_image')) {
+            $image = $request->file('leadership_image');
+            $oldImage = $contingencyLeadership->leadership_image;
+            if ($oldImage) {
+                unlink(public_path('ContingencyLeadership').'/'.$oldImage);
             }
-
-            $image = request()->file('image');
             $imageName = time().'_'.$image->getClientOriginalName();
             $image->move(public_path('ContingencyLeadership'), $imageName);
-            $contingencyLeadership->image = $imageName;
+            $contingencyLeadership->leadership_image = $imageName;
         }
 
         $contingencyLeadership->save();
-
 
         return redirect()->route('contingencyLeadership.index')->with('message', 'Contingency Leadership updated successfully.');
     }

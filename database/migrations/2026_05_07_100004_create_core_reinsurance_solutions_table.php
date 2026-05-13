@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->string('excess_title')->nullable();
-            $table->string('excess_description')->nullable();
+            $table->text('excess_description')->nullable();
             $table->string('proportional_title')->nullable();
-            $table->string('proportional_description')->nullable();
+            $table->text('proportional_description')->nullable();
             $table->timestamps();
         });
     }

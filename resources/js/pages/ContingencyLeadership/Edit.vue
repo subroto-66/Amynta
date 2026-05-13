@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import Button from '@/components/custom/Button.vue';
+import TextEditor from '@/components/custom/CKEditor.vue';
 import InputLabel from '@/components/custom/InputLabel.vue';
 import Label from '@/components/custom/Label.vue';
 import LinkButton from '@/components/custom/LinkButton.vue';
-import Textarea from '@/components/custom/Textarea.vue';
-import TextEditor from '@/components/custom/CKEditor.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import 'dropify';
 import 'dropify/dist/css/dropify.min.css';
@@ -75,7 +74,7 @@ const submit = () => {
 onMounted(() => {
 
     $('#leadership_image').dropify({
-        defaultFile: `/ContingencyLeadership/${props.contingencyLeadership.image}`,
+        defaultFile: `/ContingencyLeadership/${props.contingencyLeadership.leadership_image}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',
@@ -160,7 +159,7 @@ onMounted(() => {
                     </span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <InputLabel label="Primary Broker Button Text" v-model="form.primary_broker_button_text" type="text" />
                         <span class="text-red-500 text-sm" v-if="form.errors.primary_broker_button_text">
