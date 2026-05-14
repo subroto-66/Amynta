@@ -31,9 +31,19 @@ const form = useForm({
     covered_item_one_title: props.corporateCredit.covered_item_one_title,
     covered_item_two_title: props.corporateCredit.covered_item_two_title,
     covered_item_three_title: props.corporateCredit.covered_item_three_title,
+    covered_item_four_title: props.corporateCredit.covered_item_four_title,
+    covered_item_five_title: props.corporateCredit.covered_item_five_title,
+    covered_item_six_title: props.corporateCredit.covered_item_six_title,
+    covered_item_seven_title: props.corporateCredit.covered_item_seven_title,
+    covered_item_eight_title: props.corporateCredit.covered_item_eight_title,
     covered_item_one_icon: props.corporateCredit.covered_item_one_icon,
     covered_item_two_icon: props.corporateCredit.covered_item_two_icon,
     covered_item_three_icon: props.corporateCredit.covered_item_three_icon,
+    covered_item_four_icon: props.corporateCredit.covered_item_four_icon,
+    covered_item_five_icon: props.corporateCredit.covered_item_five_icon,
+    covered_item_six_icon: props.corporateCredit.covered_item_six_icon,
+    covered_item_seven_icon: props.corporateCredit.covered_item_seven_icon,
+    covered_item_eight_icon: props.corporateCredit.covered_item_eight_icon,
     contact_title: props.corporateCredit.contact_title,
     contact_item_one_title: props.corporateCredit.contact_item_one_title,
     contact_item_two_title: props.corporateCredit.contact_item_two_title,
@@ -128,6 +138,39 @@ const submit = () => {
                     </div>
 
                     <div>
+                        <InputLabel label="Covered Item Four Title" v-model="form.covered_item_four_title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_four_title">
+                            {{ form.errors.covered_item_four_title }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Five Title" v-model="form.covered_item_five_title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_five_title">
+                            {{ form.errors.covered_item_five_title }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Six Title" v-model="form.covered_item_six_title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_six_title">
+                            {{ form.errors.covered_item_six_title }}
+                        </span>
+                    </div>
+
+                    <div>
+                        <InputLabel label="Covered Item Seven Title" v-model="form.covered_item_seven_title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_seven_title">
+                            {{ form.errors.covered_item_seven_title }}
+                        </span>
+                    </div>
+
+                    <div>
+                        <InputLabel label="Covered Item Eight Title" v-model="form.covered_item_eight_title" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_eight_title">
+                            {{ form.errors.covered_item_eight_title }}
+                        </span>
+                    </div>
+
+                    <div>
                         <InputLabel label="Covered Item One Icon" v-model="form.covered_item_one_icon" type="text" />
                         <span class="text-red-500 text-sm" v-if="form.errors.covered_item_one_icon">
                             {{ form.errors.covered_item_one_icon }}
@@ -145,6 +188,38 @@ const submit = () => {
                             {{ form.errors.covered_item_three_icon }}
                         </span>
                     </div>
+
+                    <div>
+                        <InputLabel label="Covered Item Four Icon" v-model="form.covered_item_four_icon" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_four_icon">
+                            {{ form.errors.covered_item_four_icon }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Five Icon" v-model="form.covered_item_five_icon" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_five_icon">
+                            {{ form.errors.covered_item_five_icon }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Six Icon" v-model="form.covered_item_six_icon" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_six_icon">
+                            {{ form.errors.covered_item_six_icon }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Seven Icon" v-model="form.covered_item_seven_icon" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_seven_icon">
+                            {{ form.errors.covered_item_seven_icon }}
+                        </span>
+                    </div>
+                    <div>
+                        <InputLabel label="Covered Item Eight Icon" v-model="form.covered_item_eight_icon" type="text" />
+                        <span class="text-red-500 text-sm" v-if="form.errors.covered_item_eight_icon">
+                            {{ form.errors.covered_item_eight_icon }}
+                        </span>
+                    </div>
+
                 </div>
 
                 <div class="mt-4">

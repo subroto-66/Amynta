@@ -19,13 +19,24 @@ return new class extends Migration
             $table->text('insure_description')->nullable();
             $table->string('insure_icon')->nullable();
 
-            $table->string('covered_title')->nullable();
-            $table->string('covered_item_one_title')->nullable();
-            $table->string('covered_item_two_title')->nullable();
-            $table->string('covered_item_three_title')->nullable();
+            $table->text('covered_title')->nullable();
+            $table->text('covered_item_one_title')->nullable();
+            $table->text('covered_item_two_title')->nullable();
+            $table->text('covered_item_three_title')->nullable();
+            $table->text('covered_item_four_title')->nullable();
+            $table->text('covered_item_five_title')->nullable();
+            $table->text('covered_item_six_title')->nullable();
+            $table->text('covered_item_seven_title')->nullable();
+            $table->text('covered_item_eight_title')->nullable();
+
             $table->text('covered_item_one_icon')->nullable();
             $table->text('covered_item_two_icon')->nullable();
             $table->text('covered_item_three_icon')->nullable();
+            $table->text('covered_item_four_icon')->nullable();
+            $table->text('covered_item_five_icon')->nullable();
+            $table->text('covered_item_six_icon')->nullable();
+            $table->text('covered_item_seven_icon')->nullable();
+            $table->text('covered_item_eight_icon')->nullable();
 
             $table->string('contact_title')->nullable();
             $table->string('contact_item_one_title')->nullable();
