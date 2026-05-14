@@ -97,7 +97,7 @@ const submit = () => {
 onMounted(() => {
 
     $('#image').dropify({
-        defaultFile: `/UnderWrite/${props.underwrite.image}`,
+        defaultFile: `/Underwrite/${props.underwrite.image}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',
@@ -108,7 +108,7 @@ onMounted(() => {
     });
 
     $('#author_image').dropify({
-        defaultFile: `/UnderWrite/${props.underwrite.author_image}`,
+        defaultFile: `/Underwrite/${props.underwrite.author_image}`,
         height: 90,
         messages: {
             default: 'Drag and drop a file here or click',

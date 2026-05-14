@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\Underwrite;
 use Illuminate\Http\Request;
-use App\Models\Item;
 use Inertia\Inertia;
 
 class UnderwriteController
@@ -16,7 +16,7 @@ class UnderwriteController
 
         return Inertia::render('UnderWrite/Edit', [
             'underwrite' => $underwrite,
-            'items' => $items
+            'items' => $items,
         ]);
     }
 
@@ -79,8 +79,6 @@ class UnderwriteController
                 'image' => $item['image'],
             ]);
         }
-
-
 
         return redirect()->route('underwrite.index')->with('message', 'Underwrite updated successfully.');
     }
