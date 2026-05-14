@@ -25,7 +25,7 @@ class ContingencyLeadershipController
             'leadership_name' => 'required|string|max:255',
             'leadership_position' => 'required|string|max:255',
             'leadership_description' => 'required',
-            'leadership_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'leadership_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'broker_title' => 'required|string|max:255',
             'broker_description' => 'required',
             'primary_broker_button_text' => 'required|string|max:255',
@@ -72,6 +72,6 @@ class ContingencyLeadershipController
 
         $contingencyLeadership->save();
 
-        return redirect()->route('contingencyLeadership.index')->with('message', 'Contingency Leadership updated successfully.');
+        return back()->with('message', 'Contingency Leadership Updated Successfully.');
     }
 }

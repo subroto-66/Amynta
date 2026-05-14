@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PortfolioCredit;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\PortfolioCredit;
 
 class PortfolioCreditController
 {
     public function index()
     {
         $portfolioCredit = PortfolioCredit::first();
+
         return Inertia::render('PortfolioCredit/Edit', [
             'portfolioCredit' => $portfolioCredit,
-            
-        ]); 
+
+        ]);
     }
 
     public function update(Request $request)
@@ -40,7 +41,6 @@ class PortfolioCreditController
 
         ]);
 
-        
         $portfolioCredit = PortfolioCredit::first();
 
         $portfolioCredit->title = $request->title;
@@ -61,6 +61,6 @@ class PortfolioCreditController
         $portfolioCredit->asset_classes_four_icon = $request->asset_classes_four_icon;
         $portfolioCredit->save();
 
-        return redirect()->route('portfolioCredit.index')->with('message', 'Portfolio Credit updated successfully');
+        return back()->with('message', 'Portfolio Credit updated successfully');
     }
 }

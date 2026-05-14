@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BackedStrengthAmynta;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class BackedStrengthAmyntaController
 {
-
     public function index()
     {
         $backedStrength = BackedStrengthAmynta::first();
+
         return Inertia::render('BackedStrengthAmynta/Edit', [
             'backedStrength' => $backedStrength,
         ]);
@@ -29,8 +29,6 @@ class BackedStrengthAmyntaController
         $backedStrength->item_four = $request->item_four;
         $backedStrength->save();
 
-        return redirect()->route('backedStrength.index')->with('message', 'Others Settings updated successfully.');
+        return redirect()->route('backedStrength.index')->with('message', 'Backed Strength updated successfully.');
     }
-
-
 }

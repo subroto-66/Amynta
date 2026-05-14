@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from '@/components/custom/Button.vue';
 import TextEditor from '@/components/custom/CKEditor.vue';
+import FlashMessage from '@/components/custom/FlashMessage.vue';
 import InputLabel from '@/components/custom/InputLabel.vue';
 import Label from '@/components/custom/Label.vue';
 import LinkButton from '@/components/custom/LinkButton.vue';
@@ -23,9 +24,13 @@ defineOptions({
 
 const props = defineProps<{
     contingencyLeadership: any;
+    flash: {
+        message?: string;
+    };
 }>()
 
 const form = useForm({
+    
     id: props.contingencyLeadership.id,
     leadership_name: props.contingencyLeadership.leadership_name,
     leadership_title: props.contingencyLeadership.leadership_title,
@@ -95,7 +100,7 @@ onMounted(() => {
 <template>
 
     <Head title="Contingency Leadership Update" />
-
+    <FlashMessage :message="props.flash.message" />
     <div class="bg-white text-gray-500 m-7 p-5 rounded">
         <!-- Header -->
         <div class="flex items-center justify-between border-b pb-3">
@@ -117,7 +122,7 @@ onMounted(() => {
                     <TextEditor v-model="form.leadership_description" />
                     <span class="text-red-500 text-sm" v-if="form.errors.leadership_description">
                             {{ form.errors.leadership_description }}
-                        </span>
+                    </span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
